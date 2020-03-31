@@ -2,7 +2,7 @@
 This is my personal machine learning project. The goal of the project is to predict the outcome of dota2 game.
 
 # Introduction
-![](dota.jpg)
+![](plots/dota.jpg)
 _Dota 2_ is a famous video game with a large esports scene in the world. _Dota 2_ has an annual esports world championship tournament with over $34 million US dollars prize pool in the recent one. The ability to predict the out come of a specific game is extremely crucial not only in the sports tournament but also in regular game pubs. Knowing the winning factor of game will help player to analyze the game and strategy. 
 
 # Data
@@ -31,4 +31,9 @@ The project implemented the following ML algorithms:
 * Support Vector Machine (SVM)
 
 # Conclusion
-![](test_error)
+![](plots/test_error.png)
+
+# Study Limitations
+First, since R stores all its objects in memory, the size of the dataset limits the training probabilities. Even with 16GB of RAM, training models still takes several minutes, especially for complex methods such as random forests and SVM. The execution speed of algorithms is crucial espesically in production. If applying those ML algorithms in a real-time winning predicting AI, the speed should be as fast as possible. Therefore the limitation of computational power prohibits better tuning and production ability of the model. With cloud computing service such as Google Cloud and AWS, I believe algorithms like SVM, neural networks and deep learning will perform better.  
+
+Second, this machine learning project did not focus too much on outliers. As the box plot showed before, there exists a significant amount of outliers. It makes sense because there are a lot of uncertainties in an online game. A team can win even with no towers standing and low kills. Turnovers are very common in _Dota2_ games. It happens when enemy team making a fatal mistake or a player is throwing in the game. Methods like logistic regression are more sensitive to outliers while tree based methods are more robust. Therefore if outliers are dealt with properly, these machine learning algorithms will idealy perform better.
